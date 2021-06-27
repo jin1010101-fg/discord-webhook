@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+
+  <script>
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://ptb.discord.com/api/webhooks/858639471146041365/qyc6mSorMqDE1nV8pZ5NBlU_NnPXb6yzLTbVOS0dAGv57yYhEY2Q63rKYmIk9nDJ8ZSt");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "html main chat",
+        avatar_url: "https://cdn.discordapp.com/attachments/762863777410449450/858640481440628736/69139_x0omz8Hd.png",
+        content: "보낼 메시지"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
